@@ -23,8 +23,9 @@ from llava.utils import build_logger, server_error_msg
 
 
 logger = build_logger("controller", "controller.log")
-
-
+ 
+def hello():
+    print("hello")
 class DispatchMethod(Enum):
     LOTTERY = auto()
     SHORTEST_QUEUE = auto()
@@ -217,6 +218,7 @@ class Controller:
 
     # Let the controller act as a worker to achieve hierarchical
     # management. This can be used to connect isolated sub networks.
+
     def worker_api_get_status(self):
         model_names = set()
         speed = 0
